@@ -79,6 +79,11 @@
         <!--=======================-->
         <dependency>
             <groupId>tech.sirwellington.alchemy</groupId>
+            <artifactId>alchemy-collections</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>tech.sirwellington.alchemy</groupId>
             <artifactId>alchemy-generator</artifactId>
             <scope>compile</scope>
         </dependency>
@@ -129,11 +134,13 @@
             <artifactId>logback-classic</artifactId>
             <scope>runtime</scope>
         </dependency>
+        
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-email</artifactId>
             <version>1.4</version>
         </dependency>
+
     </dependencies>
 
     <build>
