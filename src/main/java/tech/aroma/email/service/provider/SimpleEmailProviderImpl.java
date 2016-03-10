@@ -28,8 +28,6 @@ import tech.aroma.thrift.exceptions.OperationFailedException;
 import static java.lang.String.format;
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
 import static tech.sirwellington.alchemy.arguments.assertions.Assertions.notNull;
-import static java.lang.String.format;
-import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
 
 /**
  *
