@@ -64,6 +64,10 @@ final class EmailDeliveryImpl implements EmailDelivery
         {
             email.setTo(addresses);
             email.setAuthenticator(authenticator);
+            email.setHostName("smtp.gmail.com");
+            email.setSSLOnConnect(true);
+            email.setSmtpPort(465);
+            
             email.send();
         }
         catch (EmailException ex)
