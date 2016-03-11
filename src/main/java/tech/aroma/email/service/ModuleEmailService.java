@@ -30,7 +30,7 @@ import tech.aroma.thrift.email.service.EmailService;
  *
  * @author SirWellington
  */
-final class ModuleEmailService extends AbstractModule
+public final class ModuleEmailService extends AbstractModule
 {
     private final static Logger LOG = LoggerFactory.getLogger(ModuleEmailService.class);
 
