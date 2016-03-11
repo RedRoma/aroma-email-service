@@ -22,6 +22,7 @@ import com.google.inject.AbstractModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tech.aroma.thrift.email.service.EmailService;
+import tech.aroma.thrift.services.NoOpEmailService;
 
 /**
  *
@@ -34,7 +35,7 @@ public final class ModuleDoNothingEmailService extends AbstractModule
     @Override
     protected void configure()
     {
-        bind(EmailService.Iface.class).to(DoNothingEmailService.class);
+        bind(EmailService.Iface.class).to(NoOpEmailService.class);
     }
 
 }
