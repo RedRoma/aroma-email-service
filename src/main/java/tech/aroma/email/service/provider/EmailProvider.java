@@ -18,8 +18,10 @@
 package tech.aroma.email.service.provider;
 
 import org.apache.commons.mail.Email;
+import tech.aroma.thrift.Application;
 import tech.aroma.thrift.Message;
 import tech.aroma.thrift.User;
+import tech.aroma.thrift.authentication.ApplicationToken;
 import tech.aroma.thrift.exceptions.OperationFailedException;
 import tech.sirwellington.alchemy.annotations.arguments.Required;
 
@@ -30,6 +32,10 @@ import tech.sirwellington.alchemy.annotations.arguments.Required;
  */
 public interface EmailProvider 
 {
+    Email getNewApplicationCreated(@Required Application newApp, 
+                                   @Required User creator,
+                                   @Required ApplicationToken appToken) throws OperationFailedException;
+    
     Email getNewUserEmailFor(@Required User user) throws OperationFailedException;
     
     Email getNewMessageEmailFor(@Required Message message) throws OperationFailedException;
