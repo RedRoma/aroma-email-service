@@ -78,7 +78,7 @@ public interface EmailFactory
             {
                 EmailNewApplication newApp = message.getNewApp();
                 
-                return emailProvider.getNewApplicationCreated(newApp.app, newApp.creator);
+                return emailProvider.getNewApplicationCreated(newApp.app, newApp.creator, newApp.appToken);
             }
             
             if (message.isSetNewUser())
