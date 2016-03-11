@@ -32,7 +32,7 @@ import static org.junit.Assert.*;
  *
  * @author SirWellington
  */
-@Repeat(50)
+@Repeat(10)
 @RunWith(AlchemyTestRunner.class)
 public class ModuleDoNothingEmailServiceTest 
 {
