@@ -18,6 +18,7 @@ package tech.aroma.email.service.provider;
 
 import java.util.List;
 import java.util.Objects;
+import javax.inject.Inject;
 import javax.mail.Authenticator;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -43,6 +44,7 @@ final class EmailDeliveryImpl implements EmailDelivery
 
     private final Authenticator authenticator;
 
+    @Inject
     EmailDeliveryImpl(Authenticator authenticator)
     {
         checkThat(authenticator).is(notNull());
