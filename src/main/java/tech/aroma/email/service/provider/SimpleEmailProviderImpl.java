@@ -21,9 +21,12 @@ import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tech.aroma.thrift.Application;
 import tech.aroma.thrift.Message;
 import tech.aroma.thrift.User;
+import tech.aroma.thrift.authentication.ApplicationToken;
 import tech.aroma.thrift.exceptions.OperationFailedException;
+import tech.sirwellington.alchemy.annotations.arguments.Required;
 
 import static java.lang.String.format;
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
@@ -70,6 +73,32 @@ final class SimpleEmailProviderImpl implements EmailProvider
         catch (EmailException ex)
         {
             LOG.error("Could not create simple email", ex);
+            throw new OperationFailedException("Could not generate email: " + ex.getMessage());
+        }
+    }
+
+    @Override
+    public Email getNewApplicationCreated(@Required Application newApp,
+                                          @Required User creator,
+                                          @Required ApplicationToken appToken) throws OperationFailedException
+
+    
+    {
+        checkThat(newApp, creator, appToken)
+            .are(notNull());
+
+        String email = format("New Application Created - %s.\n\n" +
+                              "Use the Following Token when sending messages from your Code: [%s]", 
+                              newApp.name,
+                              appToken.tokenId);
+        
+        try
+        {
+            return new SimpleEmail().setMsg(email);
+        }
+        catch(EmailException ex)
+        {
+            LOG.error("Failed to create simple email for new Application", ex);
             throw new OperationFailedException("Could not generate email: " + ex.getMessage());
         }
     }
