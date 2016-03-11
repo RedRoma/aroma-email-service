@@ -140,7 +140,10 @@
             <artifactId>commons-email</artifactId>
             <version>1.4</version>
         </dependency>
-
+        <dependency>
+            <groupId>tech.sirwellington.decorice</groupId>
+            <artifactId>decorice</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -27,6 +27,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import tech.aroma.thrift.authentication.service.AuthenticationService;
 import tech.aroma.thrift.email.service.EmailService;
+import tech.sirwellington.alchemy.annotations.testing.IntegrationTest;
 import tech.sirwellington.alchemy.test.junit.runners.AlchemyTestRunner;
 import tech.sirwellington.alchemy.test.junit.runners.Repeat;
 
@@ -38,6 +39,7 @@ import static org.junit.Assert.assertThat;
  *
  * @author SirWellington
  */
+@IntegrationTest
 @Repeat(10)
 @RunWith(AlchemyTestRunner.class)
 public class ModuleEmailServiceTest 

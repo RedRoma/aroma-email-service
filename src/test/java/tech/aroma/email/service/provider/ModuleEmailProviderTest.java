@@ -24,6 +24,7 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import tech.sirwellington.alchemy.annotations.testing.IntegrationTest;
 import tech.sirwellington.alchemy.test.junit.runners.AlchemyTestRunner;
 import tech.sirwellington.alchemy.test.junit.runners.Repeat;
 
@@ -34,6 +35,7 @@ import static org.junit.Assert.*;
  *
  * @author SirWellington
  */
+@IntegrationTest
 @Repeat(10)
 @RunWith(AlchemyTestRunner.class)
 public class ModuleEmailProviderTest 
