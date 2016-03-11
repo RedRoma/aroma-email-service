@@ -86,7 +86,7 @@ public class EmailFactoryTest
     {
         emailMessage.setNewApp(newApp);
         
-        when(emailProvider.getNewApplicationCreated(newApp.app, newApp.creator))
+        when(emailProvider.getNewApplicationCreated(newApp.app, newApp.creator, newApp.appToken))
             .thenReturn(email);
         
         Email result = instance.createEmailFor(emailMessage);
