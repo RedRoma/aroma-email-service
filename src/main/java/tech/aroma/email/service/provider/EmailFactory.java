@@ -25,6 +25,7 @@ import org.apache.thrift.TException;
 import tech.aroma.thrift.email.EmailMessage;
 import tech.aroma.thrift.email.EmailNewApplication;
 import tech.aroma.thrift.email.EmailNewUserRegistration;
+import tech.aroma.thrift.exceptions.InvalidArgumentException;
 import tech.sirwellington.alchemy.annotations.arguments.Required;
 
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
@@ -70,6 +71,7 @@ public interface EmailFactory
             
             checkThat(message.isSet())
                 .usingMessage("EmailMessage is not set")
+                .throwing(InvalidArgumentException.class)
                 .is(trueStatement());
             
             if (message.isSetNewApp())
