@@ -22,6 +22,8 @@ import com.google.inject.AbstractModule;
 import decorice.DecoratorModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tech.aroma.email.service.operations.ModuleEmailServiceOperations;
+import tech.aroma.email.service.provider.ModuleEmailProvider;
 import tech.aroma.thrift.email.service.EmailService;
 
 /**
@@ -36,6 +38,8 @@ final class ModuleEmailService extends AbstractModule
     protected void configure()
     {
         install(new ServiceModule());
+        install(new ModuleEmailServiceOperations());
+        install(new ModuleEmailProvider());
     }
     
     private static class ServiceModule extends DecoratorModule

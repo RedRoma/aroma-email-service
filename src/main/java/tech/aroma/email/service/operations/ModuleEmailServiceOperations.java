@@ -30,7 +30,7 @@ import tech.sirwellington.alchemy.thrift.operations.ThriftOperation;
  *
  * @author SirWellington
  */
-final class ModuleEmailServiceOperations extends AbstractModule
+public final class ModuleEmailServiceOperations extends AbstractModule
 {
     private final static Logger LOG = LoggerFactory.getLogger(ModuleEmailServiceOperations.class);
 
