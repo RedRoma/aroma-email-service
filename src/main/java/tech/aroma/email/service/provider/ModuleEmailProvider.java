@@ -26,7 +26,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author SirWellington
  */
-class ModuleEmailProvider extends AbstractModule
+public final class ModuleEmailProvider extends AbstractModule
 {
     private final static Logger LOG = LoggerFactory.getLogger(ModuleEmailProvider.class);
 
@@ -35,6 +35,7 @@ class ModuleEmailProvider extends AbstractModule
     {
         bind(EmailDelivery.class).to(EmailDeliveryImpl.class);
         bind(EmailProvider.class).to(SimpleEmailProviderImpl.class);
+        bind(EmailFactory.class).to(EmailFactory.Impl.class);
     }
 
 }
