@@ -27,6 +27,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.thrift.TException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tech.aroma.thrift.email.service.EmailServiceConstants;
 import tech.aroma.thrift.exceptions.OperationFailedException;
 
 import static java.util.stream.Collectors.toList;
@@ -63,6 +64,7 @@ final class EmailDeliveryImpl implements EmailDelivery
         try
         {
             email.setTo(addresses);
+            email.setFrom(EmailServiceConstants.AROMA_EMAIL_ADDRESS);
             email.setAuthenticator(authenticator);
             email.setHostName("smtp.gmail.com");
             email.setSSLOnConnect(true);
