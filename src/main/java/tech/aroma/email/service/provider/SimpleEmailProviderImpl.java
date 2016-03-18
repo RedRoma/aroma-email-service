@@ -50,7 +50,9 @@ final class SimpleEmailProviderImpl implements EmailProvider
 
         try
         {
-            return new SimpleEmail().setMsg(message);
+            return new SimpleEmail()
+                .setSubject("Welcome to Aroma, " + user.firstName)
+                .setMsg(message);
         }
         catch (EmailException ex)
         {
@@ -68,7 +70,9 @@ final class SimpleEmailProviderImpl implements EmailProvider
 
         try
         {
-            return new SimpleEmail().setMsg(email);
+            return new SimpleEmail()
+                .setSubject("New Message - " + message.applicationName)
+                .setMsg(email);
         }
         catch (EmailException ex)
         {
@@ -94,7 +98,9 @@ final class SimpleEmailProviderImpl implements EmailProvider
         
         try
         {
-            return new SimpleEmail().setMsg(email);
+            return new SimpleEmail()
+                .setSubject("New App - " + newApp.name)
+                .setMsg(email);
         }
         catch(EmailException ex)
         {
