@@ -22,13 +22,13 @@ import javax.inject.Inject;
 import org.apache.thrift.TException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import tech.aroma.thrift.AromaConstants;
 import tech.aroma.thrift.email.service.EmailService;
 import tech.aroma.thrift.email.service.SendEmailRequest;
 import tech.aroma.thrift.email.service.SendEmailResponse;
 import tech.aroma.thrift.exceptions.InvalidArgumentException;
 import tech.aroma.thrift.exceptions.InvalidTokenException;
 import tech.aroma.thrift.exceptions.OperationFailedException;
-import tech.aroma.thrift.service.AromaServiceConstants;
 import tech.sirwellington.alchemy.thrift.operations.ThriftOperation;
 
 import static tech.sirwellington.alchemy.arguments.Arguments.checkThat;
@@ -55,7 +55,7 @@ class BaseEmailService implements EmailService.Iface
     @Override
     public double getApiVersion() throws TException
     {
-        return AromaServiceConstants.API_VERSION;
+        return AromaConstants.API_VERSION;
     }
 
     @Override
